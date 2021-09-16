@@ -1,6 +1,5 @@
 package main.java.simple;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,8 +7,8 @@ public class XORStringsSecond {
 
     public static String stringsXOR(String s, String t) {
         String res = new String("");
-        for(int i = 0; i < s.length(); i++) {
-            if(s.charAt(i) == t.charAt(i))
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == t.charAt(i))
                 res += "0";
             else
                 res += "1";
@@ -28,7 +27,7 @@ public class XORStringsSecond {
     }
 
     public static int flippingMatrix(List<List<Integer>> matrix) {
-        for(int i = 0; i < matrix.size(); i++){
+        for (int i = 0; i < matrix.size(); i++) {
             List<Integer> integers = matrix.get(i);
             Integer reduce1 = integers.subList(0, matrix.size() / 2).stream().reduce(0, Integer::sum);
             Integer reduce2 = integers.subList(matrix.size() / 2, matrix.size()).stream().reduce(0, Integer::sum);

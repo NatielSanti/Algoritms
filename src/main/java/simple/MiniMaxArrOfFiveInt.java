@@ -4,10 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static java.util.stream.Collectors.*;
+import static java.util.stream.Collectors.toList;
 
 class MiniMaxArrOfFiveIntResult {
 
@@ -20,9 +19,9 @@ class MiniMaxArrOfFiveIntResult {
     public static void miniMaxSum(List<Integer> arr) {
         arr = arr.stream().sorted().collect(toList());
         long sum = 0;
-        for (int item: arr)
+        for (int item : arr)
             sum += item;
-        System.out.println( (sum - arr.get(arr.size() - 1)) + " " + (sum - arr.get(0)) );
+        System.out.println((sum - arr.get(arr.size() - 1)) + " " + (sum - arr.get(0)));
     }
 
 }

@@ -1,16 +1,12 @@
 package main.java.simple;
 
-import java.io.*;
-        import java.math.*;
-        import java.security.*;
-        import java.text.*;
-        import java.util.*;
-        import java.util.concurrent.*;
-        import java.util.function.*;
-        import java.util.regex.*;
-        import java.util.stream.*;
-        import static java.util.stream.Collectors.joining;
-        import static java.util.stream.Collectors.toList;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 class SalesByMatchResult {
 
@@ -27,9 +23,9 @@ class SalesByMatchResult {
         int result = 0;
         for (int i = 0; i < ar.size(); i++) {
             int item = ar.get(i);
-            for(int y = i + 1; y < ar.size(); y++){
+            for (int y = i + 1; y < ar.size(); y++) {
                 int temp = ar.get(y);
-                if(item == temp){
+                if (item == temp) {
                     ar.remove(i);
                     ar.remove(y - 1);
                     i--;
