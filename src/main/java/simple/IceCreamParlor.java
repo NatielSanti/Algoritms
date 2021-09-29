@@ -19,9 +19,21 @@ class IceCreamParlorResult {
      * The function accepts following parameters:
      *  1. INTEGER m
      *  2. INTEGER_ARRAY arr
+     *
+     * https://www.hackerrank.com/challenges/one-month-preparation-kit-icecream-parlor
      */
 
     public static List<Integer> icecreamParlor(int m, List<Integer> arr) {
+        List<Integer> result = new ArrayList<>();
+        for(int i = 0; i < arr.size(); i++){
+            for(int j = i + 1; j < arr.size(); j++){
+                if(arr.get(i) + arr.get(j) == m){
+                    result.add(i + 1);
+                    result.add(j + 1);
+                    return result;
+                }
+            }
+        }
         return new ArrayList<>();
     }
 
