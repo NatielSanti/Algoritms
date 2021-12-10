@@ -1,4 +1,4 @@
-package main.java.simple.javaexperiment;
+package main.java.simple.javaexperiment.childstaticmethod;
 
 class ChildMain extends StaticAndNonstaticMethodExtend {
     @Override

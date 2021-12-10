@@ -1,6 +1,4 @@
-package main.java.simple.javaexperiment;
-
-import java.util.Comparator;
+package main.java.simple.javaexperiment.childstaticmethod;
 
 public class StaticAndNonstaticMethodExtend {
 
@@ -13,9 +11,9 @@ public class StaticAndNonstaticMethodExtend {
 
     }
 
-    public void add(){
+    public synchronized void add(){
         System.out.println("Parent add");
-    }
+    } // haha overrite failed! Child not thread safe!
 
     static void add2(){
         System.out.println("Parent add2 static");
