@@ -8,7 +8,6 @@ public class StaticAndNonstaticMethodExtend {
         System.out.println("-----------");
         ChildMain childMain = new ChildMain();
         childMain.method();
-
     }
 
     public synchronized void add(){
