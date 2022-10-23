@@ -1,15 +1,12 @@
 package main.java.simple;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
-import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Stream;
+
 import static java.util.stream.Collectors.toList;
 
 class JesseAndCookiesResult {
@@ -27,22 +24,33 @@ class JesseAndCookiesResult {
      */
 
     public static int cookies(int k, List<Integer> A) {
+        Collections.sort(A);
+        if(A.get(0) >= k){
+            return 0;
+        }
+
         int result = 0;
         int smallestIndex = 0;
         int secondSmallIndex = 0;
         int smallest = Integer.MAX_VALUE;
         int secondSmall = Integer.MAX_VALUE;
+        int biggerIndex = A.size();
+        for (int i = 0; i < biggerIndex; i++) {
+            if(A.get(i) >= k){
+                biggerIndex = i;
+                break;
+            }
+        }
 
-        while(true){
-            System.out.println("iter = " + result);
-            for (int i = 0; i < A.size(); i++) {
+        while (true) {
+            for (int i = 0; i < biggerIndex; i++) {
                 int curr = A.get(i);
-                if( curr < 0){
+                if (curr < 0) {
                     continue;
                 }
-                if(curr < secondSmall){
-                    if(curr < smallest){
-                        secondSmall= smallest;
+                if (curr < secondSmall) {
+                    if (curr < smallest) {
+                        secondSmall = smallest;
                         smallest = curr;
                         secondSmallIndex = smallestIndex;
                         smallestIndex = i;
@@ -52,9 +60,9 @@ class JesseAndCookiesResult {
                     }
                 }
             }
-            if(smallest >= k){
+            if (smallest >= k) {
                 return result;
-            } else if(secondSmall == Integer.MAX_VALUE){
+            } else if (secondSmall == Integer.MAX_VALUE) {
                 return -1;
             } else {
                 result++;
