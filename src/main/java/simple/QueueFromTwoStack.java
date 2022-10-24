@@ -1,4 +1,4 @@
-package main.java.simple;
+package simple;
 
 import java.io.*;
 import java.util.*;
