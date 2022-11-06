@@ -26,3 +26,5 @@ public class CopyArrayList {
         System.out.println(inner);
     }
 }
+
+
