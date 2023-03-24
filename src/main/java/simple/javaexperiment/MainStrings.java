@@ -1,4 +1,4 @@
-package main.java.simple.javaexperiment;
+package simple.javaexperiment;
 
 public class MainStrings {
     public static void main(String[] args) {
